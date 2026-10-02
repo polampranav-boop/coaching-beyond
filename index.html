@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>Coaching Beyond Academy</title>
+  <link rel="manifest" href="./manifest.json" />
+  <meta name="theme-color" content="#124E3F" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Coaching Beyond" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            cricket: {
+              dark: '#0B3026',
+              primary: '#124E3F',
+              accent: '#1B735E',
+              gold: '#D4AF37',
+              goldLight: '#F3CB48',
+              surface: '#0F1A28',
+              background: '#080F18'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="h-full bg-slate-950 text-slate-100 font-sans antialiased overflow-x-hidden">
+
+  <!-- App Root Container -->
+  <div id="app" class="flex flex-col h-full min-h-screen">
+    <!-- Dynamic Content Loaded via app.js -->
+  </div>
+
+  <!-- PWA Install Prompt Banner -->
+  <div id="pwa-banner" class="fixed bottom-20 left-4 right-4 z-50 bg-cricket-primary border border-cricket-gold/30 rounded-2xl p-4 shadow-2xl flex items-center justify-between hidden">
+    <div class="flex items-center space-x-3">
+      <div class="w-10 h-10 rounded-xl bg-cricket-gold flex items-center justify-center text-slate-950 font-bold text-xl">CB</div>
+      <div>
+        <h4 class="font-bold text-sm text-white">Install Coaching Beyond</h4>
+        <p class="text-xs text-slate-300">Add to Home Screen for quick access & offline use.</p>
+      </div>
+    </div>
+    <div class="flex items-center space-x-2">
+      <button id="pwa-install-btn" class="px-3 py-1.5 bg-cricket-gold text-slate-950 font-semibold text-xs rounded-lg shadow hover:bg-cricket-goldLight">Install</button>
+      <button id="pwa-close-btn" class="p-1 text-slate-300 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
+    </div>
+  </div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
